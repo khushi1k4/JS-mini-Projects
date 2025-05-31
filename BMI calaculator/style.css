@@ -1,0 +1,74 @@
+.container 
+{
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: rgba(138, 214, 237, 0.762);
+    padding-left: 30px;
+}
+
+#form{
+    padding-left: 480px;
+    padding-top: 15px;
+}
+
+.height,.weight 
+{
+    margin-bottom: 15px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: large;
+    padding: 2px;
+    width: 205px; 
+    height: 15px;
+}
+
+#weight-guide 
+{
+    margin-left: 75px;
+    margin-top: 25px;
+}
+
+#results 
+{
+    font-size: 25px;
+    margin-left: 90px;
+    margin-top: 20px;
+    color: red;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button 
+{
+    width: 150px;
+    height: 40px;
+    margin-left: 90px;
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:orange;
+    text-decoration:none;
+    font-weight: bold;
+    background-color: blanchedalmond;
+    border: 2px solid brown;
+
+    font-size: 25px;
+}
+button:hover{
+    background-color: yellowgreen;
+    color: red;
+}
+
+h3{
+    padding-left: 20px;
+    padding-top: 45px;
+    color: brown;
+}
+h1 
+{
+    padding-left: 15px;
+    padding-top: 25px;
+}
