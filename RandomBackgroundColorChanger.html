@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,4 +47,54 @@
     document.querySelector("#start").addEventListener('click',colorChange);
     document.querySelector("#stop").addEventListener("click",stopChange);
 </script>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Random background-color changer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+<body style="background-color: #212121; color: #fff">
+    <h1>Start should change the Background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script src="chaiaurcode.js"></script>
+</body>
+<script>
+    /*Math.floor(Math.random() * 16) //* If you add 1 in it then the random value from 1 exclude 0 and since hex values are 16 from (1-9 + A-F)*/
+    /* but hex values have 0 in it so we won't add 1 in it*/
+    
+    const randomColor = function(){
+        const hex = "0123456789ABCDEF"; /*hex values*/
+        let color = "#"; /*colors in hex like #FFFFFF*/
+        for(let i=0; i<6; i++)
+        {
+            color += hex[Math.floor(Math.random() * 16)]; /* now random values are add up in color upto 6 times to get a hex color code*/
+        }
+        return color;
+    }
+
+    let intervalID;
+    const colorChange = function(){
+        intervalID = setInterval(changeBgColor,1000);
+        function changeBgColor(){
+            console.log(randomColor);
+            document.body.style.backgroundColor = randomColor();
+        }
+    } 
+    
+    const stopChange = function(){
+        clearInterval(intervalID); 
+        intervalID = null; /*flush out or neglify the value of intervalID as RandomColor get null which also free up the memory*/
+    } 
+    
+
+    document.querySelector("#start").addEventListener('click',colorChange);
+    document.querySelector("#stop").addEventListener("click",stopChange);
+</script>
+>>>>>>> 8f142fd0868597333c5f63282e59cdcc8c2c99a9
 </html>
