@@ -16,12 +16,12 @@ let prevGuess = []; //array of previous guesses
 
 if(playGame)
 {
-    submit.addEventListener("click", function(e){
+    submit.addEventListener("click", function(e) {
         e.preventDefault(); //As it is working on form then the input value get into the server to avoid that we need to prevent it by preventDefault
 
         const guess = parseInt(userInput.value);
         validateGuess(guess);
-    }, false);
+    });
 }
 
 function validateGuess(guess){
@@ -30,9 +30,10 @@ function validateGuess(guess){
     {
         alert('Please enter a valid number.');
     }
-    else if(guess<1 || guess>100)
-    {
-        alert("Enter a valid number.");
+    else if (guess < 1) {
+        alert('Please enter a number more than 1');
+    } else if (guess > 100) {
+        alert('Please enter a  number less than 100');
     }
     else{
         prevGuess.push(guess);
@@ -52,6 +53,7 @@ function validateGuess(guess){
 
 function checkGuess(guess)
 {
+    document.getElementById("wrapper").style.height = '656px';
     //to check whether the guess is correct or not with random num to return a message from the game
     if(guess === randomNum)
     {
@@ -72,7 +74,7 @@ function checkGuess(guess)
 function displayGuess(guess)
 {
     userInput.value = ''; //cleaning the value in userInput
-    guessSlots += `${guess}, `;
+    guessSlots.innerHTML += `${guess}, `;
     numGuess++;
     lives.innerHTML = `${10 - numGuess}`;
 
@@ -94,7 +96,7 @@ function endGame()
     newGame();
 }
 
-function startGame()
+function newGame()
 {
     const newGameButton = document.querySelector("#newGame");
     newGameButton.addEventListener("click",function(e){
@@ -110,5 +112,5 @@ function startGame()
         
         playGame = true;
 
-    },false);
+    });
 }
